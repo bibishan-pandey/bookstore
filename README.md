@@ -91,7 +91,7 @@ Mac: https://docs.docker.com/docker-for-mac/install/
 #### Enable running test on each commit
 Install pre-commit hook automatically runs with
 ```
-  make build
+  make run
 ```
 This should enable running test and other configurations each time you commit.
 
