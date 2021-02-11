@@ -58,7 +58,6 @@ repos:
         exclude: 'migrations|static|media'
         name: tests
         entry: make test
-        pass_filenames: false
         always_run: true
         language: system
         types: [ python ]
