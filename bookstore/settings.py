@@ -195,3 +195,4 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@bookstore.com'
