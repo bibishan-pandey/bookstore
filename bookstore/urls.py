@@ -54,6 +54,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User management
+    path('accounts/', include('allauth.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
     # Django rest framework
@@ -63,6 +64,5 @@ urlpatterns = [
     path('api/token/verify/', verify_jwt_token),
 
     # Local apps
-    path('accounts/', include('users.urls')),
     path('pages/', include('pages.urls')),
 ]
