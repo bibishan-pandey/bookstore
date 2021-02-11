@@ -14,6 +14,9 @@ services:
   app:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=adh)4xw$$&ne*qdmv(xboy$$wc9!mk^j_kbj^95k=3l5$$r3fj#=a
+      - DEBUG=1
     volumes:
       - .:/code
     ports:
