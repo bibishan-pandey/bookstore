@@ -38,6 +38,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    # Swagger
     path(
         '', schema_view.with_ui('swagger', cache_timeout=0),
         name='schema-swagger-ui',
@@ -48,10 +49,20 @@ urlpatterns = [
             cache_timeout=0,
         ), name='schema-redoc',
     ),
+
+    # Django admin
     path('admin/', admin.site.urls),
+
+    # User management
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    # Django rest framework
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', obtain_jwt_token),
     path('api/token/refresh/', refresh_jwt_token),
     path('api/token/verify/', verify_jwt_token),
+
+    # Local apps
+    path('accounts/', include('users.urls')),
     path('pages/', include('pages.urls')),
 ]
