@@ -4,46 +4,62 @@ repos:
 #    hooks:
 #      - id: black
 #        language_version: python3.6
+#        exclude: ^migrations/
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
     hooks:
       - id: trailing-whitespace
+        exclude: 'migrations|static|media'
       - id: end-of-file-fixer
+        exclude: 'migrations|static|media'
       - id: check-docstring-first
+        exclude: 'migrations|static|media'
       - id: check-yaml
+        exclude: 'migrations|static|media'
       - id: debug-statements
+        exclude: 'migrations|static|media'
       - id: requirements-txt-fixer
+        exclude: 'migrations|static|media'
       - id: double-quote-string-fixer
+        exclude: 'migrations|static|media'
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:
       - id: flake8
+        exclude: 'migrations|static|media'
         args: [--max-line-length=100]
         additional_dependencies: [ flake8-typing-imports==1.10.0 ]
   - repo: https://github.com/pre-commit/mirrors-autopep8
     rev: v1.5.4
     hooks:
       - id: autopep8
+        exclude: 'migrations|static|media'
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.10.0
     hooks:
       - id: pyupgrade
+        exclude: 'migrations|static|media'
         args: [ --py36-plus ]
   - repo: https://github.com/asottile/reorder_python_imports
     rev: v2.4.0
     hooks:
       - id: reorder-python-imports
+        exclude: 'migrations|static|media'
         args: [ --py3-plus ]
   - repo: https://github.com/asottile/add-trailing-comma
     rev: v2.1.0
     hooks:
       - id: add-trailing-comma
+        exclude: 'migrations|static|media'
         args: [ --py36-plus ]
   - repo: local
     hooks:
       - id: tests
+        exclude: 'migrations|static|media'
         name: tests
         entry: make test
+        pass_filenames: false
+        always_run: true
         language: system
         types: [ python ]
         stages: [ commit ]
