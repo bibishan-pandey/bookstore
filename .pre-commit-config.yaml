@@ -52,13 +52,12 @@ repos:
       - id: add-trailing-comma
         exclude: 'migrations|static|media'
         args: [ --py36-plus ]
-  - repo: local
-    hooks:
-      - id: tests
-        exclude: 'migrations|static|media'
-        name: tests
-        entry: make test
-        always_run: true
-        language: system
-        types: [ python ]
-        stages: [ commit ]
+#  - repo: local
+#    hooks:
+#      - id: tests
+#        exclude: 'migrations|static|media'
+#        name: tests
+#        entry: make test
+#        language: system
+#        types: [ python ]
+#        stages: [ commit ]
